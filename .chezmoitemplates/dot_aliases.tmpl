@@ -1,0 +1,32 @@
+{{ define "dot_aliases.tmpl" }}
+{{ if eq .chezmoi.os "darwin" }}
+  # macOS-only
+  alias dev='cd ~/Developer'
+  alias python='python3'
+  alias pip='pip3'
+{{ else if eq .chezmoi.os "linux" }}
+  # Linux-only
+  alias dev='cd ~/dev'
+{{ end }}
+
+# All Unix shells:
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") }}
+  alias ll='ls -la'
+  alias gg='git gui &'
+  alias gpull='git pull --rebase'
+  alias gk='gitk &'
+  alias gs='git status'
+{{ end }}
+
+# Windows PowerShell aliases
+{{ if eq .chezmoi.os "windows" }}
+  function gg { Start-Process "git-gui" }
+  function gpull { git pull --rebase }
+  function gk { Start-Process "gitk" }
+  function gs { git status }
+  function ll { Get-ChildItem -Force }
+  function dev { Set-Location "$HOME\developer" }
+{{ end }}
+
+{{ end }}
+
