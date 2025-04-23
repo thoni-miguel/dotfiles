@@ -16,6 +16,10 @@
   alias gpull='git pull --rebase'
   alias gk='gitk &'
   alias gs='git status'
+  alias lg='lazygit'
+
+  alias cmcd='cd $HOME\.local\share\chezmoi'
+  alias cm=chezmoi
 {{ end }}
 
 # Windows PowerShell aliases
@@ -25,7 +29,10 @@
   function gk { Start-Process "gitk" }
   function gs { git status }
   function ll { Get-ChildItem -Force }
-  function dev { Set-Location "$HOME\developer" }
+  function dev { Set-Location "A:\dev" }
+  function cmcd { Set-Location "$HOME\.local\share\chezmoi"}
+  Set-Alias cm chezmoi
+  Set-Alias lz lazygit
 {{ end }}
 
 {{ end }}

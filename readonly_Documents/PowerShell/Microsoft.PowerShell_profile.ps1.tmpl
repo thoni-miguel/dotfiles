@@ -1,0 +1,7 @@
+# PowerShell profile
+
+# Load shared aliases & functions
+{{ template "dot_aliases.tmpl" . }}
+
+# — additional PowerShell customizations below, if needed —
+Invoke-Expression (&starship init powershell)
