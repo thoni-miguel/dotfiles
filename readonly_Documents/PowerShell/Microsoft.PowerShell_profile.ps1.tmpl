@@ -1,7 +1,12 @@
+{{ if eq .chezmoi.os "windows" }}
 # PowerShell profile
 
 # Load shared aliases & functions
 {{ template "dot_aliases.tmpl" . }}
 
 # — additional PowerShell customizations below, if needed —
+{{ if eq .chezmoi.hostname "PC-THONI" }}
 Invoke-Expression (&starship init powershell)
+{{ end }}
+
+{{ end }}
