@@ -5,4 +5,8 @@ export PATH="$HOME/bin:$PATH"
 # Load all aliases from dot_aliases.tmpl
 {{ template "dot_aliases.tmpl" . }}
 
+{{ if eq .chezmoi.hostname "PC-THONI" }}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{ end }}
+
 {{ end }}
