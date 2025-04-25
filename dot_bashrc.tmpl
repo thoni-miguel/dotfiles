@@ -1,0 +1,29 @@
+{{ if eq .chezmoi.hostname "TI000382" }}
+
+# Load all aliases from dot_aliases.tmpl
+{{ template "dot_aliases.tmpl" . }}
+
+# Quick path
+alias pos="cd /c/dev/evo-pos"
+alias evcash="cd /c/dev/evcash-web"
+alias conc="cd /c/dev/evo-concentrador/"
+alias cleiton="cd /c/dev/evo-pos/submodules/evo-tef-client"
+alias sd="cd /c/SD/SDSimulator"
+alias dev="cd /c/dev/"
+alias stuff="cd /c/dev/stuff"
+alias loginfo="./tools/xcb.exe logcat *:I | grep '.*.cpp'"
+alias logdev="./tools/xcb.exe logcat *:D | grep '.*.cpp'"
+alias localinfo="pos && cat data/localinfo && ipconfig | awk '/IPv4/ {print $NF}'"
+# Random stuff
+alias npp="start notepad++"
+alias makeall="make killapp && make q92 dev && make serial"
+# Exports
+export MINGW_BIN_PATH="/c/Qt/Tools/mingw730_64/bin"
+export SDK_PROLIN_ROOT="/c/dev/stuff/prolin_sdk_win-2.8.18/sdk/platforms/paxngfp_201205"
+export CCACHE_PROGRAM="/c/dev/stuff/ccache-3.7.10-windows-64/ccache-3.7.10-windows-64/ccache.exe"
+export NETWORK_ADDRESS_PREFIX="192.168.1."
+export CMAKE_TOOL_PATH="/c/Qt/Tools/CMake_64/bin/cmake"
+export PATH="$PATH:/c/Qt/Tools/CMake_64/bin"
+
+
+{{ end }}
