@@ -10,7 +10,7 @@
 {{ end }}
 
 # All Unix shells:
-{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") (hasSuffix (default "" .chezmoi.env.SHELL) "bash") }}
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") (hasSuffix (env "SHELL") "bash") }}
   alias ll='ls -la'
   alias gg='git gui &'
   alias gpull='git pull --rebase'
@@ -23,7 +23,7 @@
 {{ end }}
 
 # Windows PowerShell aliases
-{{ if eq .chezmoi.hostname "PC-THONI" }}
+{{ if and (eq .chezmoi.os "windows") (not (hasSuffix (env "SHELL") "bash")) }}
   function gg { Start-Process "git-gui" }
   function gpull { git pull --rebase }
   function gk { Start-Process "gitk" }
