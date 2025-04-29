@@ -1,4 +1,7 @@
 {{ if eq .chezmoi.os "darwin" }}
+set -Ux EDITOR nvim
+set -Ux VISUAL nvim
+set -Ux GIT_EDITOR nvim
 set -gx PATH /opt/homebrew/bin $PATH
 source (brew shellenv | psub)
 {{ end }}

@@ -16,7 +16,13 @@ config.font = wezterm.font_with_fallback {
 
 config.font_size = 13.0
 
-config.color_scheme = "Catppuccin Macchiato"  -- Change to your favorite theme
+local themes = {
+  "Builtin OneDark",
+  "Catppuccin Macchiato",
+  "Gruvbox Dark",
+  "Dracula",
+}
+config.color_scheme = themes[1]
 
 config.window_background_opacity = 0.98
 config.text_background_opacity = 0.98
