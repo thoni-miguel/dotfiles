@@ -44,6 +44,10 @@ config.default_prog = { "pwsh.exe", "-NoLogo" }
 config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
 {{ end }}
 
+{{ if eq .chezmoi.hostname "TI000382" }}
+config.default_prog = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" }
+{{ end }}
+
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 
