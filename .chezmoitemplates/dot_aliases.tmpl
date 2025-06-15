@@ -2,6 +2,9 @@
 {{ if eq .chezmoi.os "darwin" }}
   # macOS-only
   alias dev='cd ~/Developer'
+  alias portfolio='cd ~/Developer/projects/portfolio/'
+  alias freelancing='cd ~/Developer/projects/freelancing-stuff/'
+  alias obsidian='cd ~/Developer/obsidian_vault/'
   alias python='python3'
   alias pip='pip3'
 {{ else if eq .chezmoi.os "linux" }}
